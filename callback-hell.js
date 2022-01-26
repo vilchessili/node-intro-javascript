@@ -26,8 +26,11 @@ const salarios = [
 
 
 const getEmpleado = ( id, callback ) => {
-
-    const empleado = empleados.find( e => e.id === id )?.nombre
+    
+    /* el ? antes del .nombrePropiedad, se pregunta si existe el objeto antes de acceder a la propiedad,
+     de lo contrario, lo ignora y continua.*/
+    
+    const empleado = empleados.find( e => e.id === id )?.nombre /* si "?" existe (null check operator) */
 
     if ( empleado ) {
         callback( null, empleado );
